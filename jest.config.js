@@ -7,7 +7,10 @@ module.exports = {
   ],
   setupTestFrameworkScriptFile: './test/utils/setup',
   testPathIgnorePatterns: ['test/fixtures/.*/.*?/'],
-  transformIgnorePatterns: ['!node_modules\\/lodash-es'],
+  transform: {
+    '^.+\\.(mjs|jsx|js)$': 'babel-jest'
+  },
+  transformIgnorePatterns: ['<rootDir>/node_modules/(?!lodash-es)'],
   moduleFileExtensions: ['js', 'mjs', 'json'],
   expand: true,
   forceExit: true
